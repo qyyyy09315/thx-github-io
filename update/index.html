@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陶红希 · 个人简历</title>
+    <meta name="description" content="陶红希个人简历 - 大连海洋大学大数据专业，研究方向为机器学习、数学建模与水产养殖。">
+    <meta property="og:title" content="陶红希 · 个人简历">
+    <meta property="og:description" content="大连海洋大学大数据专业本科在读，研究方向：机器学习、数学建模、水产养殖。">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --accent: #4f46e5;
+            --accent-light: #6366f1;
+            --accent-glow: rgba(79, 70, 229, 0.15);
+            --bg: #faf9f7;
+            --surface: #ffffff;
+            --surface-hover: #f5f3f0;
+            --text: #1a1817;
+            --text-secondary: #6b6560;
+            --text-muted: #9c9590;
+            --border: #e7e3de;
+            --border-light: #f0ece8;
+            --shadow-sm: 0 1px 2px rgba(79, 70, 229, 0.04);
+            --shadow-md: 0 4px 16px rgba(79, 70, 229, 0.06), 0 1px 4px rgba(79, 70, 229, 0.04);
+            --shadow-lg: 0 12px 40px rgba(79, 70, 229, 0.08), 0 4px 12px rgba(79, 70, 229, 0.04);
+            --shadow-xl: 0 20px 60px rgba(79, 70, 229, 0.1), 0 8px 20px rgba(79, 70, 229, 0.06);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --z-back: -1;
+            --z-base: 1;
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-overlay: 300;
+            --z-modal: 400;
+            --z-toast: 500;
+        }
+
+        .dark-mode {
+            --bg: #0d0c0b;
+            --surface: #1a1816;
+            --surface-hover: #24211e;
+            --text: #f0ede8;
+            --text-secondary: #a09a93;
+            --text-muted: #6b6560;
+            --border: #2d2a26;
+            --border-light: #1f1d1a;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25), 0 1px 4px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+            line-height: 1.75;
+            color: var(--text);
+            background-color: var(--bg);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: var(--z-toast);
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-weight: 600; line-height: 1.2; text-wrap: balance; }
+        h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); letter-spacing: -0.03em; }
+        h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); letter-spacing: -0.02em; }
+        h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+        h4 { font-size: 1.05rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: var(--text-muted); }
+        p { margin-bottom: 1rem; font-size: 1.02rem; color: var(--text-secondary); max-width: 65ch; text-wrap: pretty; }
+
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+        .skip-link {
+            position: absolute; top: -48px; left: 16px;
+            background: var(--accent); color: #fff;
+            padding: 10px 20px; text-decoration: none;
+            z-index: var(--z-toast); border-radius: var(--radius-sm);
+            font-weight: 500; transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 16px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); }
+
+        .theme-toggle {
+            position: fixed; top: 20px; right: 20px;
+            z-index: var(--z-sticky); width: 44px; height: 44px;
+            border-radius: 50%; border: 1px solid var(--border);
+            background: var(--surface); color: var(--text);
+            cursor: pointer; font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); box-shadow: var(--shadow-md);
+        }
+        .theme-toggle:hover { transform: scale(1.08); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .theme-toggle:active { transform: scale(0.95); }
+        .dark-mode .theme-toggle .fa-sun { display: none; }
+        .theme-toggle .fa-moon { display: none; }
+        .dark-mode .theme-toggle .fa-moon { display: inline; }
+        .theme-toggle .fa-sun { display: inline; }
+
+        /* Header */
+        header {
+            position: relative; padding: 120px 0 100px;
+            text-align: center; overflow: hidden;
+            background: linear-gradient(160deg, var(--accent) 0%, #3730a3 50%, #1e1b4b 100%);
+        }
+        header::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 80% at 80% 30%, rgba(255,255,255,0.04) 0%, transparent 60%),
+                radial-gradient(circle at 50% 100%, rgba(99,102,241,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .header-content { position: relative; z-index: var(--z-base); max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        .header-content h1 {
+            font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight: 700;
+            letter-spacing: 0.04em; color: #fff; margin-bottom: 12px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.12);
+        }
+        .header-content .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.45rem); font-weight: 300;
+            color: rgba(255,255,255,0.85); margin-bottom: 28px; letter-spacing: 0.06em;
+        }
+        .university-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 28px; border-radius: 50px;
+            color: rgba(255,255,255,0.9); font-size: 0.95rem;
+            font-weight: 400; letter-spacing: 0.04em; transition: var(--transition);
+        }
+        .university-badge:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.25); }
+        .university-badge i { font-size: 0.85rem; opacity: 0.7; }
+
+        .header-orb { position: absolute; border-radius: 50%; pointer-events: none; z-index: var(--z-back); }
+        .header-orb--1 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); top: -60px; right: -80px; }
+        .header-orb--2 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%); bottom: -40px; left: -40px; }
+
+        /* Section Titles */
+        .section-title { text-align: center; margin-bottom: 56px; position: relative; }
+        .section-title h2 { display: inline-block; position: relative; margin-bottom: 8px; }
+        .section-title h2::after {
+            content: ''; position: absolute; bottom: -6px; left: 50%;
+            transform: translateX(-50%); width: 48px; height: 3px;
+            border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+        .section-title p { font-size: 0.95rem; color: var(--text-muted); margin: 0 auto; text-align: center; }
+
+        section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--surface); }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(32px, 6vw, 64px); align-items: start; }
+        .about-photo {
+            position: relative; border-radius: var(--radius-lg); overflow: hidden;
+            aspect-ratio: 3/4; background: var(--border-light);
+            box-shadow: var(--shadow-xl); display: flex;
+            align-items: center; justify-content: center;
+        }
+        .about-photo .photo-placeholder { font-size: 4rem; color: var(--text-muted); opacity: 0.3; }
+        .about-photo::after {
+            content: ''; position: absolute; inset: 0;
+            border: 1px solid var(--border); border-radius: var(--radius-lg); pointer-events: none;
+        }
+        .about-text h3 { margin-bottom: 16px; color: var(--accent); }
+
+        .info-list {
+            list-style: none; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px; margin-top: 20px;
+        }
+        .info-list li {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 14px; background: var(--surface);
+            border: 1px solid var(--border); border-radius: var(--radius-sm);
+            font-size: 0.92rem; color: var(--text-secondary); transition: var(--transition);
+        }
+        .info-list li:hover { border-color: var(--accent-light); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+        .info-list li i { color: var(--accent); width: 18px; text-align: center; font-size: 0.85rem; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .skill-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-md); padding: 32px 28px;
+            transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .skill-card::before {
+            content: ''; position: absolute; inset: 0; opacity: 0;
+            transition: opacity 0.4s ease; pointer-events: none;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--accent-glow), transparent 40%);
+        }
+        .skill-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent-light); }
+        .skill-card:hover::before { opacity: 1; }
+        .skill-card i { font-size: 2rem; color: var(--accent); margin-bottom: 16px; display: block; transition: transform var(--ease-spring); }
+        .skill-card:hover i { transform: scale(1.1); }
+        .skill-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+        .skill-card p { font-size: 0.9rem; margin: 0; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 32px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 11px; top: 8px; bottom: 8px;
+            width: 2px; background: linear-gradient(180deg, var(--accent), var(--border), var(--accent-light)); border-radius: 1px;
+        }
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 28px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -25px; top: 6px;
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--accent); border: 2px solid var(--surface);
+            box-shadow: 0 0 0 4px var(--accent-glow);
+        }
+        .timeline-item .date {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;
+            color: var(--accent); font-weight: 500; letter-spacing: 0.04em; margin-bottom: 4px;
+        }
+        .timeline-item h3 { font-size: 1.1rem; margin-bottom: 4px; }
+        .timeline-item p { font-size: 0.9rem; margin: 0; }
+
+        /* Projects */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+        .project-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-md); overflow: hidden;
+            transition: var(--transition); display: flex; flex-direction: column;
+        }
+        .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent-light); }
+        .project-card-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-glow), var(--border-light));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; color: var(--accent); opacity: 0.6;
+        }
+        .project-card-body { padding: 24px 28px 28px; }
+        .project-card-body h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .project-card-body p { font-size: 0.9rem; margin-bottom: 16px; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .project-tags span {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+            padding: 4px 10px; border-radius: 50px;
+            background: var(--accent-glow); color: var(--accent); font-weight: 500;
+        }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); }
+        .contact-info h3 { margin-bottom: 16px; }
+        .contact-info a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+        .contact-info a:hover { text-decoration: underline; }
+        .qr-box {
+            text-align: center; padding: 32px; background: var(--surface);
+            border: 1px solid var(--border); border-radius: var(--radius-md);
+        }
+        .qr-box img { width: 140px; height: 140px; border-radius: var(--radius-sm); }
+        .qr-box p { font-size: 0.85rem; margin-top: 12px; text-align: center; }
+
+        /* Deploy */
+        .deployment-note {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius-md); padding: 36px; max-width: 800px; margin: 0 auto;
+        }
+        .deployment-note h3 { color: var(--accent); margin-bottom: 12px; }
+        .deployment-note ol, .deployment-note ul { padding-left: 20px; color: var(--text-secondary); font-size: 0.95rem; }
+        .deployment-note li { margin-bottom: 6px; }
+        .deployment-note pre {
+            background: var(--surface-hover); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); padding: 16px; overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; margin: 12px 0;
+        }
+        .deployment-note code {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;
+            background: var(--surface-hover); padding: 2px 6px; border-radius: 4px;
+        }
+        .deployment-note pre code { background: none; padding: 0; }
+
+        /* Footer */
+        footer {
+            background: var(--surface); border-top: 1px solid var(--border);
+            padding: 48px 0 32px; text-align: center;
+        }
+        .footer-content h2 { font-size: 1.3rem; margin-bottom: 8px; }
+        .footer-content > p { font-size: 0.9rem; text-align: center; max-width: none; margin-bottom: 20px; }
+        .social-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+        .social-link {
+            width: 40px; height: 40px; border-radius: 50%;
+            border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); text-decoration: none; transition: var(--transition); font-size: 0.9rem;
+        }
+        .social-link:hover {
+            background: var(--accent); border-color: var(--accent);
+            color: #fff; transform: translateY(-3px); box-shadow: var(--shadow-md);
+        }
+        .footer-legal { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+        .footer-legal a {
+            font-size: 0.8rem; color: var(--text-muted);
+            text-decoration: none; transition: var(--transition);
+        }
+        .footer-legal a:hover { color: var(--accent); }
+        .copyright { font-size: 0.82rem; color: var(--text-muted); margin-top: 16px; }
+
+        /* Floating Buttons */
+        .floating-buttons { position: fixed; bottom: 28px; right: 28px; display: flex; flex-direction: column; gap: 12px; z-index: var(--z-sticky); }
+        .float-btn {
+            width: 48px; height: 48px; border-radius: 50%;
+            border: 1px solid var(--border); background: var(--surface);
+            color: var(--text); cursor: pointer; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow-md); transition: var(--transition); text-decoration: none;
+        }
+        .float-btn:hover {
+            background: var(--accent); border-color: var(--accent);
+            color: #fff; transform: translateY(-2px) scale(1.05); box-shadow: var(--shadow-lg);
+        }
+        .float-btn:active { transform: scale(0.95); }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-in { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .stagger-1 { animation-delay: 0.05s; }
+        .stagger-2 { animation-delay: 0.1s; }
+        .stagger-3 { animation-delay: 0.15s; }
+        .stagger-4 { animation-delay: 0.2s; }
+        .stagger-5 { animation-delay: 0.25s; }
+        .stagger-6 { animation-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { padding: 80px 0 64px; }
+            section { padding: 56px 0; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .about-photo { max-width: 280px; margin: 0 auto 24px; }
+            .timeline { padding-left: 24px; }
+            .timeline-item { padding-left: 20px; }
+            .timeline-item::before { left: -20px; width: 8px; height: 8px; }
+            .deployment-note { padding: 24px 20px; }
+            .floating-buttons { bottom: 20px; right: 20px; }
+            .float-btn { width: 42px; height: 42px; font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+            .info-list { grid-template-columns: 1fr; }
+            .footer-legal { gap: 12px; }
+        }
+
+        /* Print */
+        @media print {
+            .theme-toggle, .floating-buttons, body::after { display: none !important; }
+            body { background: #fff; color: #000; }
+            header { background: #4f46e5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            section { break-inside: avoid; padding: 32px 0; }
+            .skill-card, .project-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">跳转到主内容</a>
+
+    <button class="theme-toggle" onclick="document.body.classList.toggle('dark-mode')" aria-label="切换深色模式">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header>
+        <div class="header-orb header-orb--1"></div>
+        <div class="header-orb header-orb--2"></div>
+        <div class="header-content animate-in">
+            <h1>陶红希</h1>
+            <p class="subtitle">数据科学与大数据技术 · 机器学习探索者</p>
+            <span class="university-badge">
+                <i class="fas fa-graduation-cap"></i>
+                大连海洋大学 · 信息工程学院
+            </span>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>关于我</h2>
+                    <p>About Me</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-photo animate-in stagger-1">
+                        <span class="photo-placeholder"><i class="fas fa-user-graduate"></i></span>
+                    </div>
+                    <div class="about-text animate-in stagger-2">
+                        <h3>陶红希（2006—）</h3>
+                        <p>辽宁大连人，现就读于大连海洋大学本科大数据专业，研究方向为机器学习、数学建模、水产养殖。对数据驱动决策与跨学科应用充满热情，致力于运用计算技术解决实际问题。</p>
+                        <p>在校期间积极参与科研项目与学科竞赛，具备扎实的编程基础和数据分析能力，善于将理论模型应用于真实场景。</p>
+                        <ul class="info-list">
+                            <li><i class="fas fa-map-marker-alt"></i> 辽宁 · 大连</li>
+                            <li><i class="fas fa-university"></i> 大连海洋大学</li>
+                            <li><i class="fas fa-graduation-cap"></i> 大数据专业 · 本科</li>
+                            <li><i class="fas fa-envelope"></i> taohongxi@example.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2>专业技能</h2>
+                    <p>Skills & Expertise</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card animate-in stagger-1">
+                        <i class="fas fa-brain"></i>
+                        <h3>机器学习</h3>
+                        <p>熟悉常用监督与无监督学习算法，包括回归、分类、聚类及集成方法，具备 Scikit-learn / PyTorch 实践经验。</p>
+                    </div>
+                    <div class="skill-card animate-in stagger-2">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>数学建模</h3>
+                        <p>擅长建立数学模型描述复杂系统，参与多项数学建模竞赛，熟练使用 MATLAB 与 Python 进行数值计算。</p>
+                    </div>
+                    <div class="skill-card animate-in stagger-3">
+                        <i class="fas fa-fish"></i>
+                        <h3>水产养殖数据分析</h3>
+                        <p>结合大数据技术分析水产养殖环境数据，优化养殖参数，提升产量与可持续性。</p>
+                    </div>
+                    <div class="skill-card animate-in stagger-4">
+                        <i class="fas fa-database"></i>
+                        <h3>数据处理</h3>
+                        <p>熟练使用 Pandas、NumPy 进行数据清洗与分析，掌握 SQL 数据库查询与数据可视化工具。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <div class="section-title">
+                    <h2>教育经历</h2>
+                    <p>Education</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item animate-in stagger-1">
+                        <div class="date">2024 — 2028</div>
+                        <h3>大连海洋大学 · 信息工程学院</h3>
+                        <p>数据科学与大数据技术专业 · 本科 · 24-2班</p>
+                    </div>
+                    <div class="timeline-item animate-in stagger-2">
+                        <div class="date">2021 — 2024</div>
+                        <h3>大连市某高级中学</h3>
+                        <p>理科方向 · 高中阶段</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>项目经历</h2>
+                    <p>Projects</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card animate-in stagger-1">
+                        <div class="project-card-image">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>水产养殖环境监测系统</h3>
+                            <p>基于 IoT 传感器与机器学习模型，实时监测水质参数并预测最佳投喂时机。</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>IoT</span>
+                                <span>ML</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card animate-in stagger-2">
+                        <div class="project-card-image">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>数学建模竞赛作品</h3>
+                            <p>参与全国大学生数学建模竞赛，建立多目标优化模型解决资源分配问题，获得省级奖项。</p>
+                            <div class="project-tags">
+                                <span>MATLAB</span>
+                                <span>Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card animate-in stagger-3">
+                        <div class="project-card-image">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="project-card-body">
+                            <h3>海洋渔业数据可视化</h3>
+                            <p>利用 Python 生态工具对近海渔业数据进行清洗、分析与交互式可视化展示。</p>
+                            <div class="project-tags">
+                                <span>Pandas</span>
+                                <span>ECharts</span>
+                                <span>Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>联系方式</h2>
+                    <p>Contact & QR Code</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info animate-in stagger-1">
+                        <h3>与我取得联系</h3>
+                        <p><i class="fas fa-envelope"></i> 邮箱：<a href="mailto:taohongxi@example.com">taohongxi@example.com</a></p>
+                        <p><i class="fab fa-github"></i> GitHub：<a href="#">github.com/taohongxi</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> 地址：辽宁省大连市沙河口区黑石礁街52号</p>
+                    </div>
+                    <div class="qr-box animate-in stagger-2">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/taohongxi-resume&color=4f46e5&bgcolor=faf9f7" alt="个人简历二维码">
+                        <p>扫描二维码访问在线简历</p>
+                        <p style="font-size:0.75rem;color:var(--text-muted);">部署后请替换为实际二维码</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deploy">
+            <div class="container">
+                <div class="section-title">
+                    <h2>网站部署与二维码说明</h2>
+                    <p>Deployment Guide</p>
+                </div>
+                <div class="deployment-note animate-in">
+                    <h3><i class="fas fa-info-circle"></i> 如何部署网站并生成二维码</h3>
+                    <p>此简历网站为纯 HTML + CSS 实现。</p>
+                    <h4>部署步骤：</h4>
+                    <ol>
+                        <li><strong>保存文件：</strong>将此代码保存为 <code>index.html</code> 文件</li>
+                        <li><strong>GitHub Pages 部署：</strong>
+                            <ul>
+                                <li>创建一个 GitHub 仓库（如：taohongxi-resume）</li>
+                                <li>将 <code>index.html</code> 上传到仓库</li>
+                                <li>在仓库设置中开启 GitHub Pages 功能</li>
+                                <li>访问地址：<code>https://[用户名].github.io/taohongxi-resume</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>生成二维码：</strong>
+                            <ul>
+                                <li>部署后获取在线 URL</li>
+                                <li>使用在线二维码生成工具（如：草料二维码）</li>
+                                <li>输入在线 URL 生成二维码图片</li>
+                                <li>下载并替换当前页面中的示例二维码</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <h4>二维码替换方法：</h4>
+                    <p>找到代码中的二维码图片部分：</p>
+                    <pre><code>&lt;img src=&quot;https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=...&quot; alt=&quot;个人简历二维码&quot;&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <h2>陶红希 · 个人简历</h2>
+            <p>数据科学与大数据技术专业 · 大连海洋大学信息工程学院 24-2班</p>
+
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link" aria-label="微信"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="social-link" aria-label="邮箱"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-legal">
+                <a href="#">隐私政策</a>
+                <a href="#">使用条款</a>
+                <a href="#">Cookie 设置</a>
+            </div>
+
+            <p class="copyright">
+                © 2024 陶红希 · MIT License · 本简历内容为课程作业展示，部分信息为虚构
+            </p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <button class="float-btn" onclick="window.print()" aria-label="打印简历" title="打印简历">
+            <i class="fas fa-print"></i>
+        </button>
+        <a class="float-btn" href="#deploy" aria-label="部署说明" title="部署说明">
+            <i class="fas fa-cloud-upload-alt"></i>
+        </a>
+        <a class="float-btn" href="#" aria-label="返回顶部" title="返回顶部">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</body>
+</html>
